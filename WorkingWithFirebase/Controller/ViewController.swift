@@ -16,20 +16,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        titleLabel.text = model.list[0].name
-        descriptionLabel.text = model.list[0].notes
+        updateUI()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI() {
+        model.getData()
+        titleLabel.text = model.list[0].name
+        descriptionLabel.text = model.list[0].notes
+        
     }
-    */
-
 }
