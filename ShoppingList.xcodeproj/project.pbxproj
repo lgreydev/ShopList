@@ -25,7 +25,7 @@
 		5E7A43E027109098005A795B /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		5E7A43E2271091E3005A795B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		5E7A43E7271098A4005A795B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5ED291D227107BB200950D4E /* WorkingWithFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkingWithFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ED291D227107BB200950D4E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED291D527107BB200950D4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED291D727107BB200950D4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5ED291DC27107BB200950D4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		5ED291C927107BB200950D4E = {
 			isa = PBXGroup;
 			children = (
-				5ED291D427107BB200950D4E /* WorkingWithFirebase */,
+				5ED291D427107BB200950D4E /* ShoppingList */,
 				5ED291D327107BB200950D4E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,12 +77,12 @@
 		5ED291D327107BB200950D4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5ED291D227107BB200950D4E /* WorkingWithFirebase.app */,
+				5ED291D227107BB200950D4E /* ShoppingList.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5ED291D427107BB200950D4E /* WorkingWithFirebase */ = {
+		5ED291D427107BB200950D4E /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
 				5E7A43E4271092DC005A795B /* Controller */,
@@ -95,15 +95,15 @@
 				5ED291E327107BB400950D4E /* Info.plist */,
 				5ED291E927107D4900950D4E /* GoogleService-Info.plist */,
 			);
-			path = WorkingWithFirebase;
+			path = ShoppingList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5ED291D127107BB200950D4E /* WorkingWithFirebase */ = {
+		5ED291D127107BB200950D4E /* ShoppingList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5ED291E627107BB400950D4E /* Build configuration list for PBXNativeTarget "WorkingWithFirebase" */;
+			buildConfigurationList = 5ED291E627107BB400950D4E /* Build configuration list for PBXNativeTarget "ShoppingList" */;
 			buildPhases = (
 				5ED291CE27107BB200950D4E /* Sources */,
 				5ED291CF27107BB200950D4E /* Frameworks */,
@@ -113,14 +113,14 @@
 			);
 			dependencies = (
 			);
-			name = WorkingWithFirebase;
+			name = ShoppingList;
 			packageProductDependencies = (
 				5ED291EC27107EF400950D4E /* FirebaseAuth */,
 				5ED291EE27107EF400950D4E /* FirebaseDatabase */,
 				5ED291F027107EF400950D4E /* FirebaseFirestore */,
 			);
 			productName = WorkingWithFirebase;
-			productReference = 5ED291D227107BB200950D4E /* WorkingWithFirebase.app */;
+			productReference = 5ED291D227107BB200950D4E /* ShoppingList.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,7 +137,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5ED291CD27107BB200950D4E /* Build configuration list for PBXProject "WorkingWithFirebase" */;
+			buildConfigurationList = 5ED291CD27107BB200950D4E /* Build configuration list for PBXProject "ShoppingList" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -153,7 +153,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5ED291D127107BB200950D4E /* WorkingWithFirebase */,
+				5ED291D127107BB200950D4E /* ShoppingList */,
 			);
 		};
 /* End PBXProject section */
@@ -331,7 +331,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGVM9RAH4N;
-				INFOPLIST_FILE = WorkingWithFirebase/Info.plist;
+				INFOPLIST_FILE = ShoppingList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -352,7 +352,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGVM9RAH4N;
-				INFOPLIST_FILE = WorkingWithFirebase/Info.plist;
+				INFOPLIST_FILE = ShoppingList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -368,7 +368,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5ED291CD27107BB200950D4E /* Build configuration list for PBXProject "WorkingWithFirebase" */ = {
+		5ED291CD27107BB200950D4E /* Build configuration list for PBXProject "ShoppingList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5ED291E427107BB400950D4E /* Debug */,
@@ -377,7 +377,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5ED291E627107BB400950D4E /* Build configuration list for PBXNativeTarget "WorkingWithFirebase" */ = {
+		5ED291E627107BB400950D4E /* Build configuration list for PBXNativeTarget "ShoppingList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5ED291E727107BB400950D4E /* Debug */,

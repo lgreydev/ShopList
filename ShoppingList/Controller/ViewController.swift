@@ -6,24 +6,29 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ViewController: UIViewController {
     
-    var model = Model()
+    var model = Model.init()
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+        
         
     }
     
+    
     func updateUI() {
-        model.getData()
         titleLabel.text = model.list[0].name
         descriptionLabel.text = model.list[0].notes
         
+    }
+    @IBAction func getData(_ sender: UIButton) {
+        print(#line, "modelList", model.list.count)
+        updateUI()
     }
 }
