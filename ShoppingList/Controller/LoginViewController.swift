@@ -8,6 +8,12 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    
+    // MARK: Outlets
+    @IBOutlet weak var enterEmail: UITextField!
+    @IBOutlet weak var enterPassword: UITextField!
+                    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +21,14 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    // MARK: Actions
+    @IBAction func loginDidTouch(_ sender: Any) {
+    }
+    
+    @IBAction func signUpDidTouch(_ sender: Any) {
+    }
+    
+    
     /*
     // MARK: - Navigation
 

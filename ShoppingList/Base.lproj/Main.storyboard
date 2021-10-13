@@ -41,6 +41,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginDidTouch:" destination="7MH-EF-Jzm" eventType="touchUpInside" id="oDM-jP-6B5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiY-b6-ITL">
                                 <rect key="frame" x="177" y="444" width="60" height="33"/>
@@ -48,6 +51,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpDidTouch:" destination="7MH-EF-Jzm" eventType="touchUpInside" id="WNY-Tl-Yxc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fPG-5L-OEb"/>
@@ -68,6 +74,10 @@
                             <constraint firstItem="fPG-5L-OEb" firstAttribute="trailing" secondItem="ISu-fm-cgX" secondAttribute="trailing" constant="50" id="yiS-nN-Fhb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enterEmail" destination="A1Q-f2-NPn" id="Qkt-n8-oyV"/>
+                        <outlet property="enterPassword" destination="ISu-fm-cgX" id="2MZ-S9-Z6T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eH-aG-a5o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
