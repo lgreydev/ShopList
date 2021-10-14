@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E55A0CE27176B0B0097E30F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55A0CD27176B0B0097E30F /* LoginViewController.swift */; };
+		5E55A0D02718BBB10097E30F /* ShopListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55A0CF2718BBB10097E30F /* ShopListTableViewController.swift */; };
 		5E7A43E127109098005A795B /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7A43E027109098005A795B /* Todo.swift */; };
 		5E7A43E3271091E3005A795B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7A43E2271091E3005A795B /* Model.swift */; };
 		5ED291D627107BB200950D4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED291D527107BB200950D4E /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		5E55A0CD27176B0B0097E30F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5E55A0CF2718BBB10097E30F /* ShopListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListTableViewController.swift; sourceTree = "<group>"; };
 		5E7A43E027109098005A795B /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		5E7A43E2271091E3005A795B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		5ED291D227107BB200950D4E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				5E55A0CD27176B0B0097E30F /* LoginViewController.swift */,
+				5E55A0CF2718BBB10097E30F /* ShopListTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				5ED291D827107BB200950D4E /* SceneDelegate.swift in Sources */,
 				5E55A0CE27176B0B0097E30F /* LoginViewController.swift in Sources */,
 				5E7A43E127109098005A795B /* Todo.swift in Sources */,
+				5E55A0D02718BBB10097E30F /* ShopListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
