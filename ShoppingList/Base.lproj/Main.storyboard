@@ -105,16 +105,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WPb-Ht-5Tw">
-                                            <rect key="frame" x="20" y="14" width="25" height="14.5"/>
+                                            <rect key="frame" x="20" y="7" width="35" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x5k-He-h1w">
-                                            <rect key="frame" x="20" y="30.5" width="30.5" height="13.5"/>
+                                            <rect key="frame" x="20" y="35" width="32" height="16.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -129,10 +129,51 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Shop List" id="mg0-rX-i78"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <segue destination="UgQ-nf-f0T" kind="show" identifier="ListToUsers" id="XaL-ft-45V"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbC-ur-G34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1768" y="78"/>
+        </scene>
+        <!--Online-->
+        <scene sceneID="9bZ-NQ-XuV">
+            <objects>
+                <tableViewController id="UgQ-nf-f0T" customClass="OnlineUsersTableViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6QJ-DB-6Ss">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" textLabel="9XV-oq-Z8o" rowHeight="60" style="IBUITableViewCellStyleDefault" id="GoB-je-Kas">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GoB-je-Kas" id="E7p-6I-Zby">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9XV-oq-Z8o">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UgQ-nf-f0T" id="GgB-4o-sT9"/>
+                            <outlet property="delegate" destination="UgQ-nf-f0T" id="3aQ-Pr-LSM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Online" id="MqT-CG-Xzg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KzW-J8-LUC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2622" y="78"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="efk-mv-hiH">
