@@ -9,34 +9,54 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    
     // MARK: Outlets
     @IBOutlet weak var enterEmail: UITextField!
     @IBOutlet weak var enterPassword: UITextField!
+    
+    // MARK: Properties
+    private let loginToList = "ListToUsers"
                     
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+      return .lightContent
+    }
+    
+    // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        enterEmail.delegate = self
+        enterPassword.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
-        // Do any additional setup after loading the view.
+    override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+      navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     // MARK: Actions
     @IBAction func loginDidTouch(_ sender: Any) {
+        performSegue(withIdentifier: loginToList, sender: nil)
     }
     
     @IBAction func signUpDidTouch(_ sender: Any) {
+        performSegue(withIdentifier: loginToList, sender: nil)
     }
-    
-    
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if textField == enterEmail {
+      enterPassword.becomeFirstResponder()
     }
-    */
 
+    if textField == enterPassword {
+      textField.resignFirstResponder()
+    }
+    return true
+  }
 }
