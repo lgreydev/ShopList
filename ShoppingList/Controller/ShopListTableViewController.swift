@@ -30,7 +30,7 @@ class ShopListTableViewController: UITableViewController {
           action: #selector(onlineUserCountDidTouch))
         onlineUserCount.tintColor = .white
         navigationItem.leftBarButtonItem = onlineUserCount
-        user = User(uid: "FakeId", email: "hungry@person.food")
+        user = User(uid: "FakeId", email: "user@email.com")
     }
     
     @objc func onlineUserCountDidTouch() {
