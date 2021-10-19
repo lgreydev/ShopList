@@ -22,5 +22,18 @@ class ShopListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.allowsMultipleSelectionDuringEditing = false
+        
+        onlineUserCount = UIBarButtonItem(
+          title: "1",
+          style: .plain,
+          target: self,
+          action: #selector(onlineUserCountDidTouch))
+        onlineUserCount.tintColor = .white
+        navigationItem.leftBarButtonItem = onlineUserCount
+        user = User(uid: "FakeId", email: "hungry@person.food")
+    }
+    
+    @objc func onlineUserCountDidTouch() {
+      performSegue(withIdentifier: listToUsers, sender: nil)
     }
 }
