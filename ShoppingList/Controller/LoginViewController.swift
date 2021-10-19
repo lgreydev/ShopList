@@ -15,10 +15,6 @@ class LoginViewController: UIViewController {
     
     // MARK: Properties
     private let loginToList = "ListToUsers"
-                    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-      return .lightContent
-    }
     
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
