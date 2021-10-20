@@ -33,7 +33,45 @@ class ShopListTableViewController: UITableViewController {
         user = User(uid: "FakeId", email: "user@email.com")
     }
     
-    @objc func onlineUserCountDidTouch() {
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(true)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+      super.viewDidDisappear(true)
+    }
+    
+    // MARK: UITableView Delegate methods
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return items.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+      let groceryItem = items[indexPath.row]
+
+      cell.textLabel?.text = groceryItem.name
+      cell.detailTextLabel?.text = groceryItem.addedByUser
+
+      toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
+
+      return cell
+    }
+    
+    // MARK: Private Methods
+    @objc private func onlineUserCountDidTouch() {
       performSegue(withIdentifier: listToUsers, sender: nil)
+    }
+    
+    private func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
+      if !isCompleted {
+        cell.accessoryType = .none
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.textColor = .black
+      } else {
+        cell.accessoryType = .checkmark
+        cell.textLabel?.textColor = .gray
+        cell.detailTextLabel?.textColor = .gray
+      }
     }
 }
