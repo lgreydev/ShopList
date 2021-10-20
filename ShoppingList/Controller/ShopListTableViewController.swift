@@ -48,12 +48,12 @@ class ShopListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
-      let groceryItem = items[indexPath.row]
+      let shopListItem = items[indexPath.row]
 
-      cell.textLabel?.text = groceryItem.name
-      cell.detailTextLabel?.text = groceryItem.addedByUser
+      cell.textLabel?.text = shopListItem.name
+      cell.detailTextLabel?.text = shopListItem.addedByUser
 
-      toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
+      toggleCellCheckbox(cell, isCompleted: shopListItem.completed)
 
       return cell
     }
