@@ -58,6 +58,27 @@ class ShopListTableViewController: UITableViewController {
       return cell
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+      return true
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+        items.remove(at: indexPath.row)
+        tableView.reloadData()
+      }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      guard let cell = tableView.cellForRow(at: indexPath) else { return }
+      var groceryItem = items[indexPath.row]
+      let toggledCompletion = !groceryItem.completed
+
+      toggleCellCheckbox(cell, isCompleted: toggledCompletion)
+      groceryItem.completed = toggledCompletion
+      tableView.reloadData()
+    }
+    
     // MARK: Private Methods
     @objc private func onlineUserCountDidTouch() {
       performSegue(withIdentifier: listToUsers, sender: nil)
