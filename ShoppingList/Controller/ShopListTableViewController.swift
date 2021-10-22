@@ -9,13 +9,11 @@ import UIKit
 
 class ShopListTableViewController: UITableViewController {
 
-    // MARK: Constants
-    let listToUsers = "ListToUsers"
-    
     // MARK: Properties
     var items: [ShopListItem] = []
     var user: User?
     var onlineUserCount = UIBarButtonItem()
+    let listToUsers = "ListToUsers"
     
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
@@ -94,5 +92,39 @@ class ShopListTableViewController: UITableViewController {
         cell.textLabel?.textColor = .gray
         cell.detailTextLabel?.textColor = .gray
       }
+    }
+    
+    // MARK: IBActions Add Item
+    @IBAction func addItemDidTouch(_ sender: AnyObject) {
+        let alert = UIAlertController(
+          title: "Grocery Item",
+          message: "Add an Item",
+          preferredStyle: .alert)
+
+        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+          guard
+            let textField = alert.textFields?.first,
+            let text = textField.text,
+            let user = self.user
+          else { return }
+
+          let groceryItem = ShopListItem(
+            name: text,
+            addedByUser: user.email,
+            completed: false)
+
+          self.items.append(groceryItem)
+          self.tableView.reloadData()
+        }
+
+        let cancelAction = UIAlertAction(
+          title: "Cancel",
+          style: .cancel)
+
+        alert.addTextField()
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+
+        present(alert, animated: true, completion: nil)
     }
 }
