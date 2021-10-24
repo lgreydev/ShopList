@@ -17,10 +17,10 @@
 		5ED291DD27107BB200950D4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED291DB27107BB200950D4E /* Main.storyboard */; };
 		5ED291DF27107BB400950D4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED291DE27107BB400950D4E /* Assets.xcassets */; };
 		5ED291E227107BB400950D4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED291E027107BB400950D4E /* LaunchScreen.storyboard */; };
-		5ED291EA27107D4900950D4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED291E927107D4900950D4E /* GoogleService-Info.plist */; };
 		5ED291ED27107EF400950D4E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5ED291EC27107EF400950D4E /* FirebaseAuth */; };
 		5ED291EF27107EF400950D4E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5ED291EE27107EF400950D4E /* FirebaseDatabase */; };
 		5ED291F127107EF400950D4E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5ED291F027107EF400950D4E /* FirebaseFirestore */; };
+		5EDF6BEB272608140032B440 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EDF6BEA272608140032B440 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		5ED291DE27107BB400950D4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ED291E127107BB400950D4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ED291E327107BB400950D4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5ED291E927107D4900950D4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5EDF6BEA272608140032B440 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 				5ED291DE27107BB400950D4E /* Assets.xcassets */,
 				5ED291E027107BB400950D4E /* LaunchScreen.storyboard */,
 				5ED291E327107BB400950D4E /* Info.plist */,
-				5ED291E927107D4900950D4E /* GoogleService-Info.plist */,
+				5EDF6BEA272608140032B440 /* GoogleService-Info.plist */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED291E227107BB400950D4E /* LaunchScreen.storyboard in Resources */,
-				5ED291EA27107D4900950D4E /* GoogleService-Info.plist in Resources */,
+				5EDF6BEB272608140032B440 /* GoogleService-Info.plist in Resources */,
 				5ED291DF27107BB400950D4E /* Assets.xcassets in Resources */,
 				5ED291DD27107BB200950D4E /* Main.storyboard in Resources */,
 			);
@@ -344,7 +344,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sergeylukaschuk.WorkingWithFirebase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sergeylukaschuk.shopList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -365,7 +365,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sergeylukaschuk.WorkingWithFirebase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sergeylukaschuk.shopList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

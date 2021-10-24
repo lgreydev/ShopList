@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ShopListTableViewController: UITableViewController {
 
@@ -16,6 +17,10 @@ class ShopListTableViewController: UITableViewController {
     var items: [ShopListItem] = []
     var user: User?
     var onlineUserCount = UIBarButtonItem()
+    
+    // MARK: Database
+    let ref = Database.database().reference(withPath: "shopList-items")
+    var refObservers: [DatabaseHandle] = []
     
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
