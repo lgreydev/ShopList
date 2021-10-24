@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var enterEmail: UITextField!
     @IBOutlet weak var enterPassword: UITextField!
     
-    // MARK: Properties
+    // MARK: Constants
     private let loginToList = "ListToUsers"
     
     // MARK: UIViewController Lifecycle

@@ -175,7 +175,13 @@
                             <outlet property="delegate" destination="UgQ-nf-f0T" id="3aQ-Pr-LSM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Online" id="MqT-CG-Xzg"/>
+                    <navigationItem key="navigationItem" title="Online" id="MqT-CG-Xzg">
+                        <barButtonItem key="rightBarButtonItem" title="Sign out" id="xUf-0Q-KOp">
+                            <connections>
+                                <action selector="signOutDidTouch:" destination="UgQ-nf-f0T" id="43E-ry-sye"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KzW-J8-LUC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

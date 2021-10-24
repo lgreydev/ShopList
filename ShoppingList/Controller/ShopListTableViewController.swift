@@ -9,11 +9,13 @@ import UIKit
 
 class ShopListTableViewController: UITableViewController {
 
+    // MARK: Constants
+    let listToUsers = "ListToUsers"
+    
     // MARK: Properties
     var items: [ShopListItem] = []
     var user: User?
     var onlineUserCount = UIBarButtonItem()
-    let listToUsers = "ListToUsers"
     
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
