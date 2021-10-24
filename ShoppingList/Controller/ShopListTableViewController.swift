@@ -22,7 +22,7 @@ class ShopListTableViewController: UITableViewController {
         tableView.allowsMultipleSelectionDuringEditing = false
         
         onlineUserCount = UIBarButtonItem(
-          title: "1",
+          title: "Online",
           style: .plain,
           target: self,
           action: #selector(onlineUserCountDidTouch))
@@ -97,7 +97,7 @@ class ShopListTableViewController: UITableViewController {
     // MARK: IBActions Add Item
     @IBAction func addItemDidTouch(_ sender: AnyObject) {
         let alert = UIAlertController(
-          title: "Grocery Item",
+          title: "Shop List Item",
           message: "Add an Item",
           preferredStyle: .alert)
 
@@ -108,12 +108,12 @@ class ShopListTableViewController: UITableViewController {
             let user = self.user
           else { return }
 
-          let groceryItem = ShopListItem(
+          let shopListItem = ShopListItem(
             name: text,
             addedByUser: user.email,
             completed: false)
 
-          self.items.append(groceryItem)
+          self.items.append(shopListItem)
           self.tableView.reloadData()
         }
 
