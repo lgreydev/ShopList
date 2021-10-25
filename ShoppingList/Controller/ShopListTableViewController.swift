@@ -40,6 +40,11 @@ class ShopListTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        // MARK: TODO - Retrieving Data
+        ref.observe(.value, with: { snapshot in
+          print(snapshot.value as Any)
+        })
     }
     
     override func viewDidDisappear(_ animated: Bool) {
