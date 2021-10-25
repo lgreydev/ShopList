@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class ShopListTableViewController: UITableViewController {
-
+    
     // MARK: Constants
     let listToUsers = "ListToUsers"
     
@@ -29,109 +29,112 @@ class ShopListTableViewController: UITableViewController {
         tableView.allowsMultipleSelectionDuringEditing = false
         
         onlineUserCount = UIBarButtonItem(
-          title: "Online",
-          style: .plain,
-          target: self,
-          action: #selector(onlineUserCountDidTouch))
+            title: "Online",
+            style: .plain,
+            target: self,
+            action: #selector(onlineUserCountDidTouch))
         onlineUserCount.tintColor = .white
         navigationItem.leftBarButtonItem = onlineUserCount
         user = User(uid: "FakeId", email: "user@email.com")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(true)
+        super.viewWillAppear(true)
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
-      super.viewDidDisappear(true)
+        super.viewDidDisappear(true)
     }
     
     // MARK: UITableView Delegate methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return items.count
+        return items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
-      let shopListItem = items[indexPath.row]
-
-      cell.textLabel?.text = shopListItem.name
-      cell.detailTextLabel?.text = shopListItem.addedByUser
-
-      toggleCellCheckbox(cell, isCompleted: shopListItem.completed)
-
-      return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let shopListItem = items[indexPath.row]
+        
+        cell.textLabel?.text = shopListItem.name
+        cell.detailTextLabel?.text = shopListItem.addedByUser
+        
+        toggleCellCheckbox(cell, isCompleted: shopListItem.completed)
+        
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-      return true
+        return true
     }
-
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-      if editingStyle == .delete {
-        items.remove(at: indexPath.row)
-        tableView.reloadData()
-      }
+        if editingStyle == .delete {
+            items.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      guard let cell = tableView.cellForRow(at: indexPath) else { return }
-      var groceryItem = items[indexPath.row]
-      let toggledCompletion = !groceryItem.completed
-
-      toggleCellCheckbox(cell, isCompleted: toggledCompletion)
-      groceryItem.completed = toggledCompletion
-      tableView.reloadData()
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        var groceryItem = items[indexPath.row]
+        let toggledCompletion = !groceryItem.completed
+        
+        toggleCellCheckbox(cell, isCompleted: toggledCompletion)
+        groceryItem.completed = toggledCompletion
+        tableView.reloadData()
     }
     
     // MARK: Private Methods
     @objc private func onlineUserCountDidTouch() {
-      performSegue(withIdentifier: listToUsers, sender: nil)
+        performSegue(withIdentifier: listToUsers, sender: nil)
     }
     
     private func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
-      if !isCompleted {
-        cell.accessoryType = .none
-        cell.textLabel?.textColor = .black
-        cell.detailTextLabel?.textColor = .black
-      } else {
-        cell.accessoryType = .checkmark
-        cell.textLabel?.textColor = .gray
-        cell.detailTextLabel?.textColor = .gray
-      }
+        if !isCompleted {
+            cell.accessoryType = .none
+            cell.textLabel?.textColor = .black
+            cell.detailTextLabel?.textColor = .black
+        } else {
+            cell.accessoryType = .checkmark
+            cell.textLabel?.textColor = .gray
+            cell.detailTextLabel?.textColor = .gray
+        }
     }
     
     // MARK: IBActions Add Item
     @IBAction func addItemDidTouch(_ sender: AnyObject) {
         let alert = UIAlertController(
-          title: "Shop List Item",
-          message: "Add an Item",
-          preferredStyle: .alert)
-
+            title: "Shop List Item",
+            message: "Add an Item",
+            preferredStyle: .alert)
+        
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-          guard
-            let textField = alert.textFields?.first,
-            let text = textField.text,
-            let user = self.user
-          else { return }
-
-          let shopListItem = ShopListItem(
-            name: text,
-            addedByUser: user.email,
-            completed: false)
-
-          self.items.append(shopListItem)
-          self.tableView.reloadData()
+            guard
+                let textField = alert.textFields?.first,
+                let text = textField.text,
+                let user = self.user
+            else { return }
+            
+            let shopListItem = ShopListItem(
+                name: text,
+                addedByUser: user.email,
+                completed: false)
+            
+            let shopListItemRef = self.ref.child(text.lowercased())
+            shopListItemRef.setValue(shopListItem.toAnyObject())
+            
+//            self.items.append(shopListItem)
+//            self.tableView.reloadData()
         }
-
+        
         let cancelAction = UIAlertAction(
-          title: "Cancel",
-          style: .cancel)
-
+            title: "Cancel",
+            style: .cancel)
+        
         alert.addTextField()
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
-
+        
         present(alert, animated: true, completion: nil)
     }
 }
