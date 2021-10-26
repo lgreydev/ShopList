@@ -85,9 +85,10 @@ class ShopListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Removing items from the table view
         if editingStyle == .delete {
-            items.remove(at: indexPath.row)
-            tableView.reloadData()
+          let shopListItem = items[indexPath.row]
+            shopListItem.ref?.removeValue()
         }
     }
     
