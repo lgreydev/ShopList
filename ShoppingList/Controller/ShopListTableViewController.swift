@@ -41,25 +41,19 @@ class ShopListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        // MARK: TODO - Retrieving Data
-        // 1
+        // Retrieving Data
         let completed = ref.observe(.value) { snapshot in
-          // 2
           var newItems: [ShopListItem] = []
-          // 3
           for child in snapshot.children {
-            // 4
             if
               let snapshot = child as? DataSnapshot,
               let shopListItem = ShopListItem(snapshot: snapshot) {
               newItems.append(shopListItem)
             }
           }
-          // 5
           self.items = newItems
           self.tableView.reloadData()
         }
-        // 6
         refObservers.append(completed)
     }
     
@@ -145,9 +139,6 @@ class ShopListTableViewController: UITableViewController {
             
             let shopListItemRef = self.ref.child(text.lowercased())
             shopListItemRef.setValue(shopListItem.toAnyObject())
-            
-//            self.items.append(shopListItem)
-//            self.tableView.reloadData()
         }
         
         let cancelAction = UIAlertAction(
