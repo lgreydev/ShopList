@@ -42,13 +42,31 @@ class ShopListTableViewController: UITableViewController {
         super.viewWillAppear(true)
         
         // MARK: TODO - Retrieving Data
-        ref.observe(.value, with: { snapshot in
-          print(snapshot.value as Any)
-        })
+        // 1
+        let completed = ref.observe(.value) { snapshot in
+          // 2
+          var newItems: [ShopListItem] = []
+          // 3
+          for child in snapshot.children {
+            // 4
+            if
+              let snapshot = child as? DataSnapshot,
+              let shopListItem = ShopListItem(snapshot: snapshot) {
+              newItems.append(shopListItem)
+            }
+          }
+          // 5
+          self.items = newItems
+          self.tableView.reloadData()
+        }
+        // 6
+        refObservers.append(completed)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
+        refObservers.forEach(ref.removeObserver(withHandle:))
+        refObservers = []
     }
     
     // MARK: UITableView Delegate methods
