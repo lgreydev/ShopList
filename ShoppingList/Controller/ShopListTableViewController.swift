@@ -93,13 +93,14 @@ class ShopListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Checking Off Items
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        var groceryItem = items[indexPath.row]
-        let toggledCompletion = !groceryItem.completed
-        
+        let shopListItem = items[indexPath.row]
+        let toggledCompletion = !shopListItem.completed
         toggleCellCheckbox(cell, isCompleted: toggledCompletion)
-        groceryItem.completed = toggledCompletion
-        tableView.reloadData()
+        shopListItem.ref?.updateChildValues([
+          "completed": toggledCompletion
+        ])
     }
     
     // MARK: Private Methods
