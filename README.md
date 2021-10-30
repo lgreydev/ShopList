@@ -12,7 +12,7 @@
 
 ### 🛡️ License
 
-This project is licensed under the MIT License - see the [`LICENSE`](https://github.com/lgreydev/ShoppingList/blob/master/License) file for details.
+This project is licensed under the MIT License - see the [`LICENSE`](https://github.com/lgreydev/ShopList/blob/main/License) file for details.
 
 ### 🙏 Support
 
