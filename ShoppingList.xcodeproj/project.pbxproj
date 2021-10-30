@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1A17A2272D161C00F74CFF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E1A17A1272D161C00F74CFF /* README.md */; };
+		5E1A17A4272D167900F74CFF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E1A17A3272D167900F74CFF /* .gitignore */; };
+		5E1A17A6272D16A000F74CFF /* License in Resources */ = {isa = PBXBuildFile; fileRef = 5E1A17A5272D16A000F74CFF /* License */; };
 		5E34B598271BE3B400F872BC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E34B597271BE3B400F872BC /* User.swift */; };
 		5E55A0CE27176B0B0097E30F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55A0CD27176B0B0097E30F /* LoginViewController.swift */; };
 		5E55A0D02718BBB10097E30F /* ShopListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55A0CF2718BBB10097E30F /* ShopListTableViewController.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E1A17A1272D161C00F74CFF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5E1A17A3272D167900F74CFF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5E1A17A5272D16A000F74CFF /* License */ = {isa = PBXFileReference; lastKnownFileType = text; path = License; sourceTree = "<group>"; };
 		5E34B597271BE3B400F872BC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5E55A0CD27176B0B0097E30F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E55A0CF2718BBB10097E30F /* ShopListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListTableViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +81,9 @@
 		5ED291C927107BB200950D4E = {
 			isa = PBXGroup;
 			children = (
+				5E1A17A5272D16A000F74CFF /* License */,
+				5E1A17A3272D167900F74CFF /* .gitignore */,
+				5E1A17A1272D161C00F74CFF /* README.md */,
 				5ED291D427107BB200950D4E /* ShoppingList */,
 				5ED291D327107BB200950D4E /* Products */,
 			);
@@ -171,7 +180,10 @@
 			files = (
 				5ED291E227107BB400950D4E /* LaunchScreen.storyboard in Resources */,
 				5EDF6BEB272608140032B440 /* GoogleService-Info.plist in Resources */,
+				5E1A17A2272D161C00F74CFF /* README.md in Resources */,
+				5E1A17A6272D16A000F74CFF /* License in Resources */,
 				5ED291DF27107BB400950D4E /* Assets.xcassets in Resources */,
+				5E1A17A4272D167900F74CFF /* .gitignore in Resources */,
 				5ED291DD27107BB200950D4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
