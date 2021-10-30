@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -39,7 +40,19 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpDidTouch(_ sender: Any) {
-        performSegue(withIdentifier: loginToList, sender: nil)
+        guard
+          let email = enterEmail.text,
+          let password = enterPassword.text,
+          !email.isEmpty,
+          !password.isEmpty
+        else { return }
+        Auth.auth().createUser(withEmail: email, password: password) { _, error in
+          if error == nil {
+            Auth.auth().signIn(withEmail: email, password: password)
+          } else {
+            print("Error in createUser: \(error?.localizedDescription ?? "")")
+          }
+        }
     }
 }
 
