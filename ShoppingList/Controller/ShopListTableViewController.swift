@@ -42,7 +42,7 @@ class ShopListTableViewController: UITableViewController {
         super.viewWillAppear(true)
         
         // Retrieving Data
-        let completed = ref.observe(.value) { snapshot in
+        let completed = ref.queryOrdered(byChild: "completed").observe(.value) { snapshot in
           var newItems: [ShopListItem] = []
           for child in snapshot.children {
             if
