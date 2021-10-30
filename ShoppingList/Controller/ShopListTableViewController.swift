@@ -11,16 +11,17 @@ import Firebase
 class ShopListTableViewController: UITableViewController {
     
     // MARK: Constants
-    let listToUsers = "ListToUsers"
+    private let listToUsers = "ListToUsers"
     
     // MARK: Properties
-    var items: [ShopListItem] = []
-    var user: User?
-    var onlineUserCount = UIBarButtonItem()
+    private var items: [ShopListItem] = []
+    private var user: User?
+    private var onlineUserCount = UIBarButtonItem()
     
     // MARK: Database
-    let ref = Database.database().reference(withPath: "shopList-items")
-    var refObservers: [DatabaseHandle] = []
+    private let ref = Database.database().reference(withPath: "shopList-items")
+    private var refObservers: [DatabaseHandle] = []
+    private var handle: AuthStateDidChangeListenerHandle?
     
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
@@ -55,12 +56,19 @@ class ShopListTableViewController: UITableViewController {
           self.tableView.reloadData()
         }
         refObservers.append(completed)
+        
+        handle = Auth.auth().addStateDidChangeListener { _, user in
+          guard let user = user else { return }
+          self.user = User(authData: user)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         refObservers.forEach(ref.removeObserver(withHandle:))
         refObservers = []
+        guard let handle = handle else { return }
+        Auth.auth().removeStateDidChangeListener(handle)
     }
     
     // MARK: UITableView Delegate methods

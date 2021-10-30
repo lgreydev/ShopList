@@ -10,10 +10,10 @@ import UIKit
 class OnlineUsersTableViewController: UITableViewController {
     
     // MARK: Constants
-    let userCell = "UserCell"
+    private let userCell = "UserCell"
 
     // MARK: Properties
-    var currentUsers: [String] = []
+    private var currentUsers: [String] = []
 
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
