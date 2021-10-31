@@ -67,6 +67,16 @@ class ShopListTableViewController: UITableViewController {
             currentUserRef.setValue(user.email)
             currentUserRef.onDisconnectRemoveValue()
         }
+        
+        // Updating the Online User Count
+        let users = usersRef.observe(.value) { snapshot in
+          if snapshot.exists() {
+            self.onlineUserCount.title = snapshot.childrenCount.description
+          } else {
+            self.onlineUserCount.title = "0"
+          }
+        }
+        usersRefObservers.append(users)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -75,6 +85,10 @@ class ShopListTableViewController: UITableViewController {
         refObservers = []
         guard let handle = handle else { return }
         Auth.auth().removeStateDidChangeListener(handle)
+        
+        // This removes associated observers on 'usersRef'
+        usersRefObservers.forEach(usersRef.removeObserver(withHandle:))
+        usersRefObservers = []
     }
     
     // MARK: UITableView Delegate methods
