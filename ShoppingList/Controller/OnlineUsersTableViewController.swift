@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class OnlineUsersTableViewController: UITableViewController {
     
@@ -43,6 +44,19 @@ class OnlineUsersTableViewController: UITableViewController {
     
     // MARK: Actions
     @IBAction func signOutDidTouch(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
+        guard let user = Auth.auth().currentUser else { return }
+        let onlineRef = Database.database().reference(withPath: "online/\(user.uid)")
+        onlineRef.removeValue { error, _ in
+          if let error = error {
+            print("Removing online failed: \(error)")
+            return
+          }
+          do {
+            try Auth.auth().signOut()
+            self.navigationController?.popToRootViewController(animated: true)
+          } catch let error {
+            print("Auth sign out failed: \(error)")
+          }
+        }
     }
 }
