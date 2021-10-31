@@ -22,6 +22,8 @@ class ShopListTableViewController: UITableViewController {
     private let ref = Database.database().reference(withPath: "shopList-items")
     private var refObservers: [DatabaseHandle] = []
     private var handle: AuthStateDidChangeListenerHandle?
+    private let usersRef = Database.database().reference(withPath: "online")
+    private var usersRefObservers: [DatabaseHandle] = []
     
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
@@ -44,22 +46,26 @@ class ShopListTableViewController: UITableViewController {
         
         // Retrieving Data
         let completed = ref.queryOrdered(byChild: "completed").observe(.value) { snapshot in
-          var newItems: [ShopListItem] = []
-          for child in snapshot.children {
-            if
-              let snapshot = child as? DataSnapshot,
-              let shopListItem = ShopListItem(snapshot: snapshot) {
-              newItems.append(shopListItem)
+            var newItems: [ShopListItem] = []
+            for child in snapshot.children {
+                if
+                    let snapshot = child as? DataSnapshot,
+                    let shopListItem = ShopListItem(snapshot: snapshot) {
+                    newItems.append(shopListItem)
+                }
             }
-          }
-          self.items = newItems
-          self.tableView.reloadData()
+            self.items = newItems
+            self.tableView.reloadData()
         }
         refObservers.append(completed)
         
+        // Monitoring Users’ Online Status
         handle = Auth.auth().addStateDidChangeListener { _, user in
-          guard let user = user else { return }
-          self.user = User(authData: user)
+            guard let user = user else { return }
+            self.user = User(authData: user)
+            let currentUserRef = self.usersRef.child(user.uid)
+            currentUserRef.setValue(user.email)
+            currentUserRef.onDisconnectRemoveValue()
         }
     }
     
@@ -95,7 +101,7 @@ class ShopListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         // Removing items from the table view
         if editingStyle == .delete {
-          let shopListItem = items[indexPath.row]
+            let shopListItem = items[indexPath.row]
             shopListItem.ref?.removeValue()
         }
     }
@@ -107,7 +113,7 @@ class ShopListTableViewController: UITableViewController {
         let toggledCompletion = !shopListItem.completed
         toggleCellCheckbox(cell, isCompleted: toggledCompletion)
         shopListItem.ref?.updateChildValues([
-          "completed": toggledCompletion
+            "completed": toggledCompletion
         ])
     }
     
