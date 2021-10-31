@@ -38,7 +38,7 @@ class ShopListTableViewController: UITableViewController {
             action: #selector(onlineUserCountDidTouch))
         onlineUserCount.tintColor = .white
         navigationItem.leftBarButtonItem = onlineUserCount
-        user = User(uid: "FakeId", email: "user@email.com")
+        //user = User(uid: "FakeId", email: "user@email.com")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +71,7 @@ class ShopListTableViewController: UITableViewController {
         // Updating the Online User Count
         let users = usersRef.observe(.value) { snapshot in
           if snapshot.exists() {
-            self.onlineUserCount.title = snapshot.childrenCount.description
+            self.onlineUserCount.title = "Online \(snapshot.childrenCount.description)"
           } else {
             self.onlineUserCount.title = "0"
           }

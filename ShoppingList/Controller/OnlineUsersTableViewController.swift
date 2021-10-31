@@ -16,18 +16,49 @@ class OnlineUsersTableViewController: UITableViewController {
     // MARK: Properties
     private var currentUsers: [String] = []
 
+    // MARK: Database
+    private let usersRef = Database.database().reference(withPath: "online")
+    private var usersRefObservers: [DatabaseHandle] = []
+    
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentUsers.append("my_test@user")
     }
     
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(true)
+        let childAdded = usersRef.observe(.childAdded) { [weak self] snap in
+            guard
+              let email = snap.value as? String,
+              let self = self
+            else { return }
+            self.currentUsers.append(email)
+            let row = self.currentUsers.count - 1
+            let indexPath = IndexPath(row: row, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .top)
+          }
+        usersRefObservers.append(childAdded)
+        
+        let childRemoved = usersRef.observe(.childRemoved) {[weak self] snap in
+            guard
+              let emailToFind = snap.value as? String,
+              let self = self
+            else { return }
+
+            for (index, email) in self.currentUsers.enumerated()
+            where email == emailToFind {
+              let indexPath = IndexPath(row: index, section: 0)
+              self.currentUsers.remove(at: index)
+              self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+          }
+        usersRefObservers.append(childRemoved)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
       super.viewDidDisappear(true)
+        usersRefObservers.forEach(usersRef.removeObserver(withHandle:))
+        usersRefObservers = []
     }
     
     // MARK: UITableView Delegate methods
