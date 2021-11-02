@@ -14,6 +14,9 @@
 		5E55A0CE27176B0B0097E30F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55A0CD27176B0B0097E30F /* LoginViewController.swift */; };
 		5E55A0D02718BBB10097E30F /* ShopListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55A0CF2718BBB10097E30F /* ShopListTableViewController.swift */; };
 		5E55A0D22718DBA10097E30F /* OnlineUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55A0D12718DBA10097E30F /* OnlineUsersTableViewController.swift */; };
+		5E55CFD12731D748006604D3 /* 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E55CFCE2731D748006604D3 /* 001.jpg */; };
+		5E55CFD22731D748006604D3 /* 002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E55CFCF2731D748006604D3 /* 002.jpg */; };
+		5E55CFD32731D748006604D3 /* 003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E55CFD02731D748006604D3 /* 003.jpg */; };
 		5E93EBA4271F5BEA00019697 /* ShopListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E93EBA3271F5BEA00019697 /* ShopListItem.swift */; };
 		5ED291D627107BB200950D4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED291D527107BB200950D4E /* AppDelegate.swift */; };
 		5ED291D827107BB200950D4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED291D727107BB200950D4E /* SceneDelegate.swift */; };
@@ -34,6 +37,9 @@
 		5E55A0CD27176B0B0097E30F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E55A0CF2718BBB10097E30F /* ShopListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListTableViewController.swift; sourceTree = "<group>"; };
 		5E55A0D12718DBA10097E30F /* OnlineUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineUsersTableViewController.swift; sourceTree = "<group>"; };
+		5E55CFCE2731D748006604D3 /* 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 001.jpg; sourceTree = "<group>"; };
+		5E55CFCF2731D748006604D3 /* 002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 002.jpg; sourceTree = "<group>"; };
+		5E55CFD02731D748006604D3 /* 003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 003.jpg; sourceTree = "<group>"; };
 		5E93EBA3271F5BEA00019697 /* ShopListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListItem.swift; sourceTree = "<group>"; };
 		5ED291D227107BB200950D4E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED291D527107BB200950D4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E55CFCD2731D037006604D3 /* Screenshot */ = {
+			isa = PBXGroup;
+			children = (
+				5E55CFCE2731D748006604D3 /* 001.jpg */,
+				5E55CFCF2731D748006604D3 /* 002.jpg */,
+				5E55CFD02731D748006604D3 /* 003.jpg */,
+			);
+			path = Screenshot;
+			sourceTree = "<group>";
+		};
 		5E7A43DF2710908C005A795B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +97,7 @@
 		5ED291C927107BB200950D4E = {
 			isa = PBXGroup;
 			children = (
+				5E55CFCD2731D037006604D3 /* Screenshot */,
 				5E1A17A5272D16A000F74CFF /* License */,
 				5E1A17A3272D167900F74CFF /* .gitignore */,
 				5E1A17A1272D161C00F74CFF /* README.md */,
@@ -184,7 +201,10 @@
 				5E1A17A6272D16A000F74CFF /* License in Resources */,
 				5ED291DF27107BB400950D4E /* Assets.xcassets in Resources */,
 				5E1A17A4272D167900F74CFF /* .gitignore in Resources */,
+				5E55CFD22731D748006604D3 /* 002.jpg in Resources */,
+				5E55CFD32731D748006604D3 /* 003.jpg in Resources */,
 				5ED291DD27107BB200950D4E /* Main.storyboard in Resources */,
+				5E55CFD12731D748006604D3 /* 001.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
