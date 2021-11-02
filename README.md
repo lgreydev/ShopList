@@ -2,7 +2,7 @@
 
 The app uses Firebase, saves data, real-time sync, authentication, user online status. When a user adds items to the list, they instantly appear on everyone's devices.
 
-<img src="https://github.com/lgreydev/ShopList/blob/main/Screenshot/001.jpg" width="270"><img src="https://github.com/lgreydev/ShopList/blob/main/Screenshot/002.jpg" width="270"><img src="https://github.com/lgreydev/ShopList/blob/main/Screenshot/003.jpg" width="270">
+<img src="https://github.com/lgreydev/ShopList/blob/main/Screenshot/001.jpg" width="250"><img src="https://github.com/lgreydev/ShopList/blob/main/Screenshot/002.jpg" width="250"><img src="https://github.com/lgreydev/ShopList/blob/main/Screenshot/003.jpg" width="250">
 
 ### 💾 Install
 **Clone**
